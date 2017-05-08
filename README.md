@@ -13,7 +13,7 @@ Dependencies: React >= 0.13.0
 
 * Download HTML table as Excel file;
 * No server side code;
-* Set desired .xsl filename and sheet;
+* Set desired .xls filename and sheet;
 * Supported IE 11;
 
 ## Example
