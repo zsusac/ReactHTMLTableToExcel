@@ -94,4 +94,4 @@ ReactHTMLTableToExcel.propTypes = {
     buttonText: PropTypes.string
 };
 
-export default ReactHTMLTableToExcel
+module.exports = ReactHTMLTableToExcel
