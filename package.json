@@ -1,0 +1,25 @@
+{
+  "name": "react-html-table-to-excel",
+  "version": "1.0.0",
+  "description": "Small react component for converting and downloading HTML table to Excel file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zsusac/ReactHTMLTableToExcel.git"
+  },
+  "keywords": [
+    "react",
+    "excel",
+    "table",
+    "html"
+  ],
+  "author": "Zvonimir Susac",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zsusac/ReactHTMLTableToExcel/issues"
+  },
+  "homepage": "https://github.com/zsusac/ReactHTMLTableToExcel#readme"
+}
