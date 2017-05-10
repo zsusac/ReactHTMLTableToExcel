@@ -15,7 +15,8 @@
     "react",
     "excel",
     "table",
-    "html"
+    "html",
+    "xls"
   ],
   "author": "Zvonimir Susac",
   "license": "MIT",
@@ -31,7 +32,6 @@
     "react": "^15.5.4"
   },
   "dependencies": {
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react": "^15.5.4"
   }
 }

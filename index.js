@@ -82,13 +82,13 @@ var ReactHTMLTableToExcel = function (_Component) {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(
-                    'button',
-                    { id: 'react-html-table-to-excel', type: 'button', onClick: this.download },
-                    this.props.buttonText || 'Download'
-                )
+                'button',
+                {
+                    id: this.props.id || '',
+                    className: this.props.className || '',
+                    type: 'button',
+                    onClick: this.download },
+                this.props.buttonText || 'Download'
             );
         }
     }]);
@@ -97,6 +97,8 @@ var ReactHTMLTableToExcel = function (_Component) {
 }(_react.Component);
 
 ReactHTMLTableToExcel.propTypes = {
+    id: _react.PropTypes.string,
+    className: _react.PropTypes.string,
     table: _react.PropTypes.string.isRequired,
     filename: _react.PropTypes.string.isRequired,
     sheet: _react.PropTypes.string.isRequired,

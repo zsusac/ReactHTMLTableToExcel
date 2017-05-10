@@ -1,5 +1,9 @@
 # ReactHTMLTableToExcel
-Provides a client side generation of Excel (.xls) file from HTML table element. No additional dependencies.
+Provides a client side generation of Excel (.xls) file from HTML table element.
+
+___
+No additional dependencies, except React.
+___
 
 ## Installation
 
@@ -11,10 +15,11 @@ Dependencies: React >= 0.13.0
 
 ## Features
 
-* Download HTML table as Excel file;
-* No server side code;
-* Set desired .xls filename and sheet;
-* Supported IE 11;
+* Download HTML table as Excel file in .xls format
+* No server side code
+* Set desired .xls filename and sheet
+* Set desired class name and id for styling
+* Supported IE 11
 
 ## Example
 

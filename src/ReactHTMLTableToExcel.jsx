@@ -80,14 +80,18 @@ class ReactHTMLTableToExcel extends Component {
 
     render() {
         return (
-            <div>
-                <button id="react-html-table-to-excel" type="button" onClick={this.download}>{this.props.buttonText || 'Download'}</button>
-            </div>
+            <button
+                id={this.props.id || ''}
+                className={this.props.className || ''}
+                type='button'
+                onClick={this.download}>{this.props.buttonText || 'Download'}</button>
         )
     }
 }
 
 ReactHTMLTableToExcel.propTypes = {
+    id: PropTypes.string,
+    className: PropTypes.string,
     table: PropTypes.string.isRequired,
     filename: PropTypes.string.isRequired,
     sheet: PropTypes.string.isRequired,
