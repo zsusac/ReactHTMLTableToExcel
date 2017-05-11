@@ -1,54 +1,68 @@
+/* global window, document */
 import React, {Component, PropTypes} from 'react';
+
+propTypes = {
+    table: PropTypes.string.isRequired,
+    filename: PropTypes.string.isRequired,
+    sheet: PropTypes.string.isRequired,
+    id: PropTypes.string,
+    className: PropTypes.string,
+    buttonText: PropTypes.string
+};
 
 class ReactHTMLTableToExcel extends Component {
 
     constructor(props) {
         super(props);
-        this.download = this
-            .download
+        this.handleDownload = this
+            .handleDownload
             .bind(this);
     }
 
-    base64(s) {
+    static base64(s) {
         return window.btoa(unescape(encodeURIComponent(s)))
     }
 
-    format(s, c) {
+    static format(s, c) {
         return s.replace(/{(\w+)}/g, function (m, p) {
             return c[p];
         })
     }
 
-    download() {
-        let table = document
+    handleDownload() {
+        if (!document) {
+            return null;
+        }
+
+        const table = document
             .getElementById(this.props.table)
             .outerHTML;
-        let sheet = String(this.props.sheet);
-        let filename = String(this.props.filename) + '.xls';
+        const sheet = String(this.props.sheet);
+        const filename = String(this.props.filename) + '.xls';
 
-        let uri = 'data:application/vnd.ms-excel;base64,';
-        let template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-mic' +
+        const uri = 'data:application/vnd.ms-excel;base64,';
+        const template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-mic' +
                 'rosoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><meta cha' +
                 'rset="UTF-8"><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:Exce' +
                 'lWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/>' +
                 '</x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></' +
                 'xml><![endif]--></head><body>{table}</body></html>';
 
-        let context = {
+        const context = {
             worksheet: sheet || 'Worksheet',
             table: table
         }
 
         // If IE11
         if (window.navigator.msSaveOrOpenBlob) {
-            let fileData = ['<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-mic' +
+            const fileData = ['<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-mic' +
                     'rosoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><meta cha' +
                     'rset="UTF-8"><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:Exce' +
                     'lWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/>' +
                     '</x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></' +
                     'xml><![endif]--></head><body>' + table + '</body></html>'];
-            let blobObject = new Blob(fileData);
-            let elem = window
+            const blobObject = new Blob(fileData);
+            const elem = window
                 .document
                 .createElement('a');
             document
@@ -62,7 +76,7 @@ class ReactHTMLTableToExcel extends Component {
             return;
         }
 
-        let element = window
+        const element = window
             .document
             .createElement('a');
         element.href = uri + this.base64(this.format(template, context));
@@ -84,18 +98,11 @@ class ReactHTMLTableToExcel extends Component {
                 id={this.props.id || ''}
                 className={this.props.className || ''}
                 type='button'
-                onClick={this.download}>{this.props.buttonText || 'Download'}</button>
+                onClick={this.handleDownload}>{this.props.buttonText || 'Download'}</button>
         )
     }
 }
 
-ReactHTMLTableToExcel.propTypes = {
-    id: PropTypes.string,
-    className: PropTypes.string,
-    table: PropTypes.string.isRequired,
-    filename: PropTypes.string.isRequired,
-    sheet: PropTypes.string.isRequired,
-    buttonText: PropTypes.string
-};
+ReactHTMLTableToExcel.propTypes = propTypes
 
 export default ReactHTMLTableToExcel

@@ -2,7 +2,7 @@
 Provides a client side generation of Excel (.xls) file from HTML table element.
 
 ___
-No additional dependencies, except React.
+No additional dependencies
 ___
 
 ## Installation

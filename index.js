@@ -16,7 +16,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /* global window, document */
+
+
+propTypes = {
+    table: _react.PropTypes.string.isRequired,
+    filename: _react.PropTypes.string.isRequired,
+    sheet: _react.PropTypes.string.isRequired,
+    id: _react.PropTypes.string,
+    className: _react.PropTypes.string,
+    buttonText: _react.PropTypes.string
+};
 
 var ReactHTMLTableToExcel = function (_Component) {
     _inherits(ReactHTMLTableToExcel, _Component);
@@ -26,25 +36,17 @@ var ReactHTMLTableToExcel = function (_Component) {
 
         var _this = _possibleConstructorReturn(this, (ReactHTMLTableToExcel.__proto__ || Object.getPrototypeOf(ReactHTMLTableToExcel)).call(this, props));
 
-        _this.download = _this.download.bind(_this);
+        _this.handleDownload = _this.handleDownload.bind(_this);
         return _this;
     }
 
     _createClass(ReactHTMLTableToExcel, [{
-        key: 'base64',
-        value: function base64(s) {
-            return window.btoa(unescape(encodeURIComponent(s)));
-        }
-    }, {
-        key: 'format',
-        value: function format(s, c) {
-            return s.replace(/{(\w+)}/g, function (m, p) {
-                return c[p];
-            });
-        }
-    }, {
-        key: 'download',
-        value: function download() {
+        key: 'handleDownload',
+        value: function handleDownload() {
+            if (!document) {
+                return null;
+            }
+
             var table = document.getElementById(this.props.table).outerHTML;
             var sheet = String(this.props.sheet);
             var filename = String(this.props.filename) + '.xls';
@@ -87,22 +89,27 @@ var ReactHTMLTableToExcel = function (_Component) {
                     id: this.props.id || '',
                     className: this.props.className || '',
                     type: 'button',
-                    onClick: this.download },
+                    onClick: this.handleDownload },
                 this.props.buttonText || 'Download'
             );
+        }
+    }], [{
+        key: 'base64',
+        value: function base64(s) {
+            return window.btoa(unescape(encodeURIComponent(s)));
+        }
+    }, {
+        key: 'format',
+        value: function format(s, c) {
+            return s.replace(/{(\w+)}/g, function (m, p) {
+                return c[p];
+            });
         }
     }]);
 
     return ReactHTMLTableToExcel;
 }(_react.Component);
 
-ReactHTMLTableToExcel.propTypes = {
-    id: _react.PropTypes.string,
-    className: _react.PropTypes.string,
-    table: _react.PropTypes.string.isRequired,
-    filename: _react.PropTypes.string.isRequired,
-    sheet: _react.PropTypes.string.isRequired,
-    buttonText: _react.PropTypes.string
-};
+ReactHTMLTableToExcel.propTypes = propTypes;
 
 exports.default = ReactHTMLTableToExcel;
