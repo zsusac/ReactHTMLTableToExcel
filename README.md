@@ -11,8 +11,6 @@ ___
 npm install --save react-html-table-to-excel
 ```
 
-Dependencies: React >= 0.13.0
-
 ## Features
 
 * Download HTML table as Excel file in .xls format
@@ -38,11 +36,13 @@ class Test extends Component {
         return (
             <div>
                 <ReactHTMLTableToExcel
-                    table="table-test"
-                    filename="tabletest"
-                    sheet="tablica"
+                    id="test-table-xls-button"
+                    className="download-table-xls-button"
+                    table="table-to-xls"
+                    filename="tablexls"
+                    sheet="tablexls"
                     buttonText="Download as XLS"/>
-                <table id="table-test">
+                <table id="table-to-xls">
                     <tr>
                         <th>Firstname</th>
                         <th>Lastname</th>
