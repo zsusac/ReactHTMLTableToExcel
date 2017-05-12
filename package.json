@@ -18,7 +18,7 @@
     "html",
     "xls"
   ],
-  "author": "Zvonimir Susac",
+  "author": "Zvonimir Susac <susac.zvonimir@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/zsusac/ReactHTMLTableToExcel/issues"
@@ -26,9 +26,15 @@
   "homepage": "https://github.com/zsusac/ReactHTMLTableToExcel#readme",
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^5.0.1",
+    "eslint-plugin-react": "^7.0.0",
     "react": "^15.5.4"
   },
   "dependencies": {}
