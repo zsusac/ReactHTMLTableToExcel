@@ -1,7 +1,7 @@
 /* global window, document */
 import React, {Component, PropTypes} from 'react';
 
-propTypes = {
+const propTypes = {
     table: PropTypes.string.isRequired,
     filename: PropTypes.string.isRequired,
     sheet: PropTypes.string.isRequired,
