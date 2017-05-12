@@ -19,6 +19,20 @@ npm install --save react-html-table-to-excel
 * Set desired class name and id for styling
 * Supported IE 11
 
+## Options
+
+A list of available properties can be found below. These must be passed to the containing `ReactHTMLTableToExcel` component.
+
+Property | Type | Description
+----- | ----- | -----
+**table** | *string* | ID attribute of HTML table element.
+**filename** | *string* | Name of Excel file.
+**sheet** | *string* | Name of Excel sheet.
+**id** | *string* | ID attribute of button element.
+**className** | *string* | Class attribute of button element.
+**buttonText** | *string* | Button text.
+
+
 ## Example
 
 ```javascript

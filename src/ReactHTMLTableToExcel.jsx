@@ -1,6 +1,5 @@
 /* global window, document */
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+import React, {Component, PropTypes} from 'react';
 
 const propTypes = {
     table: PropTypes.string.isRequired,

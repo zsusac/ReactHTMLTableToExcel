@@ -10,10 +10,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -24,12 +20,12 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var propTypes = {
-    table: _propTypes2.default.string.isRequired,
-    filename: _propTypes2.default.string.isRequired,
-    sheet: _propTypes2.default.string.isRequired,
-    id: _propTypes2.default.string,
-    className: _propTypes2.default.string,
-    buttonText: _propTypes2.default.string
+    table: _react.PropTypes.string.isRequired,
+    filename: _react.PropTypes.string.isRequired,
+    sheet: _react.PropTypes.string.isRequired,
+    id: _react.PropTypes.string,
+    className: _react.PropTypes.string,
+    buttonText: _react.PropTypes.string
 };
 
 var ReactHTMLTableToExcel = function (_Component) {
