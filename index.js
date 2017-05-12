@@ -72,7 +72,7 @@ var ReactHTMLTableToExcel = function (_Component) {
             }
 
             var element = window.document.createElement('a');
-            element.href = uri + this.base64(this.format(template, context));
+            element.href = uri + ReactHTMLTableToExcel.base64(ReactHTMLTableToExcel.format(template, context));
             element.download = filename;
             document.body.appendChild(element);
             element.click();
