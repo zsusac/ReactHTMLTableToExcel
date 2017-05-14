@@ -50,6 +50,18 @@ var ReactHTMLTableToExcel = function (_Component) {
     key: 'handleDownload',
     value: function handleDownload() {
       if (!document) {
+        if (process.env.NODE_ENV !== 'production') {
+          console.error('Failed to access document object');
+        }
+
+        return null;
+      }
+
+      if (document.getElementById(this.props.table).nodeType !== 1 || document.getElementById(this.props.table).nodeName !== 'TABLE') {
+        if (process.env.NODE_ENV !== 'production') {
+          console.error('Provided table property is not html table element');
+        }
+
         return null;
       }
 
