@@ -1,4 +1,4 @@
 language: node_js
 node_js:
   - "6"
-script: npm client:test
+script: npm run client:test
