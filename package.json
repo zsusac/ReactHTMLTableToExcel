@@ -38,6 +38,9 @@
       "<rootDir>/../../node_modules/"
     ]
   },
+  "peerDependencies": {
+    "react": "^15.x.x"
+  },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",

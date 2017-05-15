@@ -1,6 +1,8 @@
 # ReactHTMLTableToExcel
 Provides a client side generation of Excel (.xls) file from HTML table element.
 
+[![NPM](https://nodei.co/npm/react-html-table-to-excel.png)](https://npmjs.org/package/react-html-table-to-excel)
+
 ___
 No additional dependencies
 ___
