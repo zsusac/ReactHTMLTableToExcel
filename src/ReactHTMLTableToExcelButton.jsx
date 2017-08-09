@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import withReactHTMLTableToExcel from './ReactHTMLTableToExcel.jsx';
+import withReactHTMLTableToExcel from './ReactHTMLTableToExcel';
 
 const Button = (props) => (
      <button

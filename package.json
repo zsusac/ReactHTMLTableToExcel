@@ -4,7 +4,7 @@
     "description": "Small react component for converting and downloading HTML table to Excel file",
     "main": "index.js",
     "scripts": {
-        "build": "./node_modules/.bin/babel ./src/*.jsx -o index.js",
+        "build": "./node_modules/.bin/babel -d lib/ src/",
         "prepublish": "npm run build",
         "client:test": "NODE_ENV=test jest",
         "client:test:watch": "NODE_ENV=test jest --watch"
