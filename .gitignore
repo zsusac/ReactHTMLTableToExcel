@@ -59,6 +59,3 @@ typings/
 
 # Visual studio code
 .vscode/
-
-#ignore build
-lib/
