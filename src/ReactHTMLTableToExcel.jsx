@@ -102,16 +102,16 @@ class ReactHTMLTableToExcel extends Component {
   }
 
   render() {
-    const RenderedButton = this.props.buttonComponent;
+    const ButtonComponent = this.props.buttonComponent;
     return (
-      <RenderedButton
+      <ButtonComponent
         id={this.props.id}
         className={this.props.className}
         type="button"
         onClick={this.handleDownload}
       >
         {this.props.buttonText}
-      </RenderedButton>
+      </ButtonComponent>
     );
   }
 }
