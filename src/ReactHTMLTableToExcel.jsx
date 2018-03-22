@@ -8,7 +8,7 @@ const propTypes = {
   sheet: PropTypes.string.isRequired,
   id: PropTypes.string,
   className: PropTypes.string,
-  buttonLabel: PropTypes.oneOfType([ // Can be either a text or some JSX like an icon
+  buttonText: PropTypes.oneOfType([ // Can be either a text or some JSX like an icon
     PropTypes.string,
     PropTypes.object,
   ]),
@@ -21,7 +21,7 @@ const propTypes = {
 const defaultProps = {
   id: 'button-download-as-xls',
   className: 'button-download',
-  buttonLabel: 'Download',
+  buttonText: 'Download',
   buttonComponent: 'button',
 };
 
@@ -110,7 +110,7 @@ class ReactHTMLTableToExcel extends Component {
         type="button"
         onClick={this.handleDownload}
       >
-        {this.props.buttonLabel}
+        {this.props.buttonText}
       </RenderedButton>
     );
   }
