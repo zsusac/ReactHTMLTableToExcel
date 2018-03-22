@@ -14,6 +14,7 @@ const props = {
   filename: 'tablexls',
   sheet: 'tablexls',
   buttonText: 'Download as XLS',
+  buttonComponent: 'button',
 };
 
 const container = shallow(<ReactHTMLTableToExcel {...props} />);

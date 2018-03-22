@@ -27,19 +27,20 @@ npm install --save react-html-table-to-excel
 
 A list of available properties can be found below. These must be passed to the containing `ReactHTMLTableToExcel` component.
 
-Property | Type | Description
------ | ----- | -----
-**table** | *string* | ID attribute of HTML table element.
-**filename** | *string* | Name of Excel file.
-**sheet** | *string* | Name of Excel sheet.
-**id** | *string* | ID attribute of button element.
-**className** | *string* | Class attribute of button element.
-**buttonText** | *string* | Button text.
+Property | Type | Default | Description
+----- | ----- | ----- | -----
+**table** | *string* | - | ID attribute of HTML table element.
+**filename** | *string* | - | Name of Excel file.
+**sheet** | *string* | - | Name of Excel sheet.
+**id** | *string* | "button-download-as-xls" | ID attribute of button element.
+**className** | *string* | "button-download" | Class attribute of button element.
+**buttonText** | *string / object* | "Download" | Button label.
+**buttonComponent** | *string / function* | "button" | React component to use as button
 
 
 ## Example
 
-```javascript
+```jsx
 import React, {Component} from 'react';
 import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 
@@ -59,7 +60,9 @@ class Test extends Component {
                     table="table-to-xls"
                     filename="tablexls"
                     sheet="tablexls"
-                    buttonText="Download as XLS"/>
+                    buttonText="Download as XLS"
+                    buttonComponent={ button }
+                />
                 <table id="table-to-xls">
                     <tr>
                         <th>Firstname</th>

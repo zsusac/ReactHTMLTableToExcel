@@ -29,13 +29,17 @@ var propTypes = {
   sheet: _propTypes2.default.string.isRequired,
   id: _propTypes2.default.string,
   className: _propTypes2.default.string,
-  buttonText: _propTypes2.default.string
+  buttonText: _propTypes2.default.oneOfType([// Can be either a text or some JSX like an icon
+  _propTypes2.default.string, _propTypes2.default.object]),
+  buttonComponent: _propTypes2.default.oneOfType([// Can be either a text (e.g. 'button') or a React Component
+  _propTypes2.default.string, _propTypes2.default.func])
 };
 
 var defaultProps = {
   id: 'button-download-as-xls',
   className: 'button-download',
-  buttonText: 'Download'
+  buttonText: 'Download',
+  buttonComponent: 'button'
 };
 
 var ReactHTMLTableToExcel = function (_Component) {
@@ -104,8 +108,9 @@ var ReactHTMLTableToExcel = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var ButtonComponent = this.props.buttonComponent;
       return _react2.default.createElement(
-        'button',
+        ButtonComponent,
         {
           id: this.props.id,
           className: this.props.className,

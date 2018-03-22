@@ -15,6 +15,7 @@ class Example extends Component {
           filename="tablexls"
           sheet="tablexls"
           buttonText="Download as XLS"
+          buttonComponent="button"
         />
         <table id="table-to-xls">
           <tr>
