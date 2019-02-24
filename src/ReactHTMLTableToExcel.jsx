@@ -96,6 +96,7 @@ class ReactHTMLTableToExcel extends Component {
   render() {
     return (
       <button
+        {...this.props}
         id={this.props.id}
         className={this.props.className}
         type="button"
