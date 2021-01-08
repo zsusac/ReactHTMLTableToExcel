@@ -31,6 +31,7 @@ Property | Type | Description
 ----- | ----- | -----
 **table** | *string* | ID attribute of HTML table element.
 **filename** | *string* | Name of Excel file.
+**filetype** | *string* | Name of File Extension for Excel file.
 **sheet** | *string* | Name of Excel sheet.
 **id** | *string* | ID attribute of button element.
 **className** | *string* | Class attribute of button element.
@@ -58,6 +59,7 @@ class Test extends Component {
                     className="download-table-xls-button"
                     table="table-to-xls"
                     filename="tablexls"
+                    filetype="xls"
                     sheet="tablexls"
                     buttonText="Download as XLS"/>
                 <table id="table-to-xls">
