@@ -29,13 +29,15 @@ var propTypes = {
   sheet: _propTypes2.default.string.isRequired,
   id: _propTypes2.default.string,
   className: _propTypes2.default.string,
-  buttonText: _propTypes2.default.string
+  buttonText: _propTypes2.default.string,
+  autoDownload: _propTypes2.default.bool
 };
 
 var defaultProps = {
   id: 'button-download-as-xls',
   className: 'button-download',
-  buttonText: 'Download'
+  buttonText: 'Download',
+  autoDownload: false
 };
 
 var ReactHTMLTableToExcel = function (_Component) {
@@ -51,6 +53,11 @@ var ReactHTMLTableToExcel = function (_Component) {
   }
 
   _createClass(ReactHTMLTableToExcel, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      if (this.props.autoDownload) this.handleDownload();
+    }
+  }, {
     key: 'handleDownload',
     value: function handleDownload() {
       if (!document) {
@@ -104,6 +111,7 @@ var ReactHTMLTableToExcel = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      if (this.props.autoDownload) return null;
       return _react2.default.createElement(
         'button',
         {

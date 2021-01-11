@@ -9,18 +9,24 @@ const propTypes = {
   id: PropTypes.string,
   className: PropTypes.string,
   buttonText: PropTypes.string,
+  autoDownload: PropTypes.bool,
 };
 
 const defaultProps = {
   id: 'button-download-as-xls',
   className: 'button-download',
   buttonText: 'Download',
+  autoDownload: false,
 };
 
 class ReactHTMLTableToExcel extends Component {
   constructor(props) {
     super(props);
     this.handleDownload = this.handleDownload.bind(this);
+  }
+
+  componentDidMount() {
+    if (this.props.autoDownload) this.handleDownload();
   }
 
   static base64(s) {
@@ -94,6 +100,7 @@ class ReactHTMLTableToExcel extends Component {
   }
 
   render() {
+    if (this.props.autoDownload) return null;
     return (
       <button
         id={this.props.id}
