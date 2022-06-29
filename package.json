@@ -6,8 +6,8 @@
 	"scripts": {
 		"build": "./node_modules/.bin/babel ./src/ReactHTMLTableToExcel.jsx -o index.js",
 		"prepublish": "npm run build",
-		"client:test": "NODE_ENV=test jest",
-		"client:test:watch": "NODE_ENV=test jest --watch"
+		"client:test": "jest",
+		"client:test:watch": "jest --watch"
 	},
 	"repository": {
 		"type": "git",
@@ -50,6 +50,7 @@
 		"chai": "^3.5.0",
 		"chai-enzyme": "^1.0.0-beta.1",
 		"enzyme": "^3.11.0",
+		"enzyme-adapter-react-16": "^1.15.6",
 		"eslint": "^8.18.0",
 		"eslint-config-airbnb": "^19.0.4",
 		"eslint-plugin-import": "^2.2.0",

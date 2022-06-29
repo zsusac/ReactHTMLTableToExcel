@@ -1,9 +1,13 @@
 import React from 'react';
 import chai, { expect } from 'chai';
 import chaiEnzyme from 'chai-enzyme';
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import ReactHTMLTableToExcel from '../src/ReactHTMLTableToExcel';
+
+configure({ adapter: new Adapter() });
 
 chai.use(chaiEnzyme());
 
