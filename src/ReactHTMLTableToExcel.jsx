@@ -52,7 +52,8 @@ class ReactHTMLTableToExcel extends Component {
     const table = document.getElementById(this.props.table).outerHTML;
     const sheet = String(this.props.sheet);
     const filetype = String((this.props.filetype)?(this.props.filetype === 'xlsx'?'xlsx':'xls'):'xls')
-    const filename = String(this.props.filename) + '.' + filetype;
+    const filename = `${String(this.props.filename) + '.' + filetype}`;
+
 
     const uri = 'data:application/vnd.ms-excel;base64,';
     const template =
