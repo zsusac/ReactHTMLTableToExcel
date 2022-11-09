@@ -104,7 +104,7 @@ class ReactHTMLTableToExcel extends Component {
         type="button"
         onClick={this.handleDownload}
       >
-        {this.props.buttonText}
+        {this.props.children ? this.props.children : this.props.buttonText}
       </button>
     );
   }

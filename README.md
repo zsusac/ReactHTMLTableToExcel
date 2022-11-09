@@ -36,7 +36,7 @@ Property | Type | Description
 **id** | *string* | ID attribute of button element.
 **className** | *string* | Class attribute of button element.
 **buttonText** | *string* | Button text.
-
+**children** | *element* | Child elements to render instead of the button text.
 
 ## Example
 
