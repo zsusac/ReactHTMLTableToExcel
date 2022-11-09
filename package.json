@@ -1,6 +1,6 @@
 {
     "name": "react-html-table-to-excel-3",
-    "version": "3.0.0",
+    "version": "3.0.1",
     "description": "Small react component for converting and downloading HTML table to Excel file",
     "main": "index.js",
     "scripts": {
