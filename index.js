@@ -26,7 +26,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var propTypes = {
   table: _propTypes2.default.string.isRequired,
   filename: _propTypes2.default.string.isRequired,
-  filetype: _propTypes2.default.string.isRequired,
+  filetype: _propTypes2.default.string,
   sheet: _propTypes2.default.string.isRequired,
   id: _propTypes2.default.string,
   className: _propTypes2.default.string,
