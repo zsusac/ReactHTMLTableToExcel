@@ -1,9 +1,10 @@
-# ReactHTMLTableToExcel
-Provides a client side generation of Excel (.xls) file from HTML table element.
+# ReactHTMLTableToExcel V3
+Provides a client side generation of Excel (.xls/.xlsx) file from HTML table element.
+
 
 [![Build Status](https://travis-ci.org/zsusac/ReactHTMLTableToExcel.svg?branch=master)](https://travis-ci.org/zsusac/ReactHTMLTableToExcel)
 
-[![NPM](https://nodei.co/npm/react-html-table-to-excel.png)](https://npmjs.org/package/react-html-table-to-excel)
+[![NPM](https://nodei.co/npm/react-html-table-to-excel-3.png)](https://npmjs.org/package/react-html-table-to-excel-3)
 
 ___
 No additional dependencies
@@ -12,7 +13,7 @@ ___
 ## Installation
 
 ```
-npm install --save react-html-table-to-excel
+npm install --save react-html-table-to-excel-3
 ```
 
 ## Features
@@ -31,11 +32,12 @@ Property | Type | Description
 ----- | ----- | -----
 **table** | *string* | ID attribute of HTML table element.
 **filename** | *string* | Name of Excel file.
+**filetype** | *string* | Name of File Extension for Excel file.
 **sheet** | *string* | Name of Excel sheet.
 **id** | *string* | ID attribute of button element.
 **className** | *string* | Class attribute of button element.
 **buttonText** | *string* | Button text.
-
+**children** | *element* | Child elements to render instead of the button text.
 
 ## Example
 
@@ -58,6 +60,7 @@ class Test extends Component {
                     className="download-table-xls-button"
                     table="table-to-xls"
                     filename="tablexls"
+                    filetype="xls"
                     sheet="tablexls"
                     buttonText="Download as XLS"/>
                 <table id="table-to-xls">
@@ -85,3 +88,7 @@ class Test extends Component {
 
 export default Test
 ```
+
+### NB: This repository is a super set of the original [ReactHTMLTableToExcel](https://npmjs.org/package/react-html-table-to-excel-3) package by [zsusac](https://github.com/zsusac) which is currently no longer maintained. This version adds some new features but maintains the original core.
+
+I do not retain the ownership or responsibility of this package.

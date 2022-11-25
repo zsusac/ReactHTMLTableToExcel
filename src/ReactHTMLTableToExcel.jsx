@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 const propTypes = {
   table: PropTypes.string.isRequired,
   filename: PropTypes.string.isRequired,
+  filetype: PropTypes.string,
   sheet: PropTypes.string.isRequired,
   id: PropTypes.string,
   className: PropTypes.string,
@@ -50,7 +51,9 @@ class ReactHTMLTableToExcel extends Component {
 
     const table = document.getElementById(this.props.table).outerHTML;
     const sheet = String(this.props.sheet);
-    const filename = `${String(this.props.filename)}.xls`;
+    const filetype = String((this.props.filetype)?(this.props.filetype === 'xlsx'?'xlsx':'xls'):'xls')
+    const filename = `${String(this.props.filename) + '.' + filetype}`;
+
 
     const uri = 'data:application/vnd.ms-excel;base64,';
     const template =
@@ -101,7 +104,7 @@ class ReactHTMLTableToExcel extends Component {
         type="button"
         onClick={this.handleDownload}
       >
-        {this.props.buttonText}
+        {this.props.children ? this.props.children : this.props.buttonText}
       </button>
     );
   }
